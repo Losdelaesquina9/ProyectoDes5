@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BuscarService } from '../services/buscar.service';
+import { ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-comanda',
@@ -9,7 +10,7 @@ import { BuscarService } from '../services/buscar.service';
 export class ComandaPage implements OnInit {
 
   datosid: any;
-  constructor(private serv: BuscarService) { }
+  constructor(private serv: BuscarService,public toastController: ToastController) { }
  
 
   modelos = {
@@ -26,6 +27,11 @@ export class ComandaPage implements OnInit {
 
   }
 
+   async registroP(){
+
+    this.presentToast();
+
+   }
   async buscarSku(){
    
     const valor = {
@@ -44,6 +50,16 @@ export class ComandaPage implements OnInit {
 
     console.log(this.datosid);
 
+  }
+
+  async presentToast() {
+    const toast = await this.toastController.create({
+      message: 'Pedido Realizado con exito.',
+      duration: 4000,
+      color: "success",
+      position: "middle"
+    });
+    toast.present();
   }
 
 }

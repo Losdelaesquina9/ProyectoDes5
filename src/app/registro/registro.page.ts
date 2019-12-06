@@ -11,12 +11,12 @@ import { NgForm } from '@angular/forms';
 export class RegistroPage implements OnInit {
   
   registro1 = {
-    nombre_empleado: '',
+    usuario: '',
     pass: '',
     telefono: '',
     email: '',
     direccion: '',    
-    tipoMov: 'insertar'
+    tipoMov: 'insertarEmpleado'
   };
 
   constructor(private serv: BuscarService,    
@@ -32,6 +32,7 @@ export class RegistroPage implements OnInit {
 
      await this.serv.postData(this.registro1);
 
+     this.navCtrl.navigateRoot('login');
 
 
   }
