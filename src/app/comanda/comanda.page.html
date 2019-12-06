@@ -154,14 +154,13 @@
    
       <ion-row>
           <ion-col>
-              <ion-button color="danger" expand="block" > <ion-icon name="log-out" > </ion-icon>    Cerrar sesion</ion-button>
+              <ion-button color="danger" expand="block" (click)="salir()"> <ion-icon name="log-out" > </ion-icon>    Cerrar sesion</ion-button>
           </ion-col>  
         </ion-row>
         <ion-row>   
           <ion-col>
-              <ion-button color="danger" expand="block" ><ion-icon name="thumbs-down" > </ion-icon>  Cancelar </ion-button>
-              
-          </ion-col>
+              <ion-button color="danger" expand="block" (click)="limpiar()" ><ion-icon name="thumbs-down" > </ion-icon>  Cancelar </ion-button>
+              </ion-col>
       </ion-row>
 
   </ion-grid>

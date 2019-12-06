@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BuscarService } from '../services/buscar.service';
-import { ToastController } from '@ionic/angular';
+import { ToastController, NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-comanda',
@@ -10,7 +10,9 @@ import { ToastController } from '@ionic/angular';
 export class ComandaPage implements OnInit {
 
   datosid: any;
-  constructor(private serv: BuscarService,public toastController: ToastController) { }
+  constructor(private serv: BuscarService,
+    public toastController: ToastController,
+    private navCtrl: NavController) { }
  
 
   modelos = {
@@ -51,10 +53,28 @@ export class ComandaPage implements OnInit {
     this.modelos.existencia = this.datosid.result.existencia;
     this.modelos.precio = this.datosid.result.precio;
 
-    console.log(this.datosid);
+    // console.log(this.datosid);
 
   }
 
+  async salir(){   
+    this.navCtrl.navigateRoot('login');
+  }
+  async limpiar(){
+
+    this.modelos = {
+      cliente: '',
+      sku: '',
+      modelo: '',
+      marca: '',
+      color: '',
+      talla: '',
+      linea: '',
+      existencia: '',
+      precio: ''
+    };
+
+  }
   async presentToast() {
     const toast = await this.toastController.create({
       message: 'Pedido Realizado con exito.',
