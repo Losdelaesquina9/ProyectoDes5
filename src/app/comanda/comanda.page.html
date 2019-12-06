@@ -1,0 +1,144 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>comanda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+
+<ion-content>
+    <form (ngSubmit)="registroP(fPedido)" #fPedido="ngForm">
+    <ion-grid>  
+       <ion-row>
+         <ion-col>
+             <ion-label position="floating">Cliente:</ion-label>            
+             <ion-input
+               name="cliente"
+               type="text"
+               [(ngModel)]="modelos.cliente"
+               required
+             ></ion-input>
+         </ion-col>              
+       </ion-row>
+       
+       <ion-row>
+           <ion-col>
+               <ion-label>SKU</ion-label>
+               <ion-input
+                 name="sku"
+                 type="text"
+                 [(ngModel)]="modelos.sku"
+                 required
+               ></ion-input>
+           </ion-col>
+           
+         </ion-row>
+         
+         <ion-row>
+             <ion-col>
+               <ion-button color="primary" expand="block" (click)="buscarSku()">
+                 Buscar
+               </ion-button>
+             </ion-col>
+         </ion-row>
+ 
+       <ion-row>
+         <ion-col>
+             <ion-label>Modelo</ion-label>
+             <ion-input
+               name="modelo"
+               type="text"
+               [(ngModel)]="modelos.modelo"
+               required
+             ></ion-input>
+         </ion-col>        
+       </ion-row>
+       
+       <ion-row>
+       <ion-col>
+           <ion-label>Marca</ion-label>
+           <ion-input
+             name="marca"
+             type="text"
+             [(ngModel)]="modelos.marca"
+             required
+           ></ion-input>
+       </ion-col>  
+              
+       </ion-row>
+ 
+       <ion-row>
+         <ion-col>
+             <ion-label>Color</ion-label>
+             <ion-input
+               name="color"
+               type="text"
+               [(ngModel)]="modelos.color"
+               required
+             ></ion-input>
+         </ion-col>
+         <!-- <ion-label color="dark">Color:</ion-label> -->
+        
+       </ion-row>
+   
+ 
+       <ion-row>
+ 
+         <ion-col>
+             <ion-label>Talla</ion-label>
+             <ion-input
+               name="talla"
+               type="number"
+               [(ngModel)]="modelos.talla"
+               required
+             ></ion-input> 
+ 
+         </ion-col>
+         <!-- <ion-label color="dark">Talla:</ion-label> -->
+           
+       </ion-row>
+   
+       <ion-row>
+         <!-- <ion-label color="dark">Linea:</ion-label> -->
+          <ion-col>
+             <ion-label>Linea: </ion-label>
+             <ion-input
+               name="linea"
+               type="text"
+               [(ngModel)]="modelos.linea"
+               required
+             ></ion-input>
+          </ion-col>
+       </ion-row>  
+
+       <ion-row>
+          <ion-col>
+              <ion-button  type="submit" color="primary" expand="block" ><ion-icon name="thumbs-up" > </ion-icon>  Realizar pedido</ion-button>
+          </ion-col>
+        </ion-row>
+
+
+ </ion-grid>
+
+ </form>
+ <ion-grid>
+   
+      <ion-row>
+          <ion-col>
+              <ion-button color="danger" expand="block" > <ion-icon name="log-out" > </ion-icon>    Cerrar sesion</ion-button>
+          </ion-col>  
+        </ion-row>
+        <ion-row>   
+          <ion-col>
+              <ion-button color="danger" expand="block" ><ion-icon name="thumbs-down" > </ion-icon>  Cancelar </ion-button>
+              
+          </ion-col>
+      </ion-row>
+
+  </ion-grid>
+
+
+</ion-content>
+
+
