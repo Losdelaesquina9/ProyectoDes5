@@ -110,7 +110,35 @@
                required
              ></ion-input>
           </ion-col>
-       </ion-row>  
+       </ion-row> 
+       
+       <ion-row>
+        <!-- <ion-label color="dark">Linea:</ion-label> -->
+         <ion-col>
+            <ion-label>Existencia: </ion-label>
+            <ion-input
+              name="existencia"
+              type="text"
+              [(ngModel)]="modelos.existencia"
+              required
+            ></ion-input>
+         </ion-col>
+      </ion-row>  
+
+      <ion-row>
+        <!-- <ion-label color="dark">Linea:</ion-label> -->
+         <ion-col>
+            <ion-label>Precio: </ion-label>
+            <ion-input
+              name="precio"
+              type="text"
+              [(ngModel)]="modelos.precio"
+              required
+            ></ion-input>
+         </ion-col>
+      </ion-row>  
+
+
 
        <ion-row>
           <ion-col>

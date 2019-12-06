@@ -20,7 +20,9 @@ export class ComandaPage implements OnInit {
     marca: '',
     color: '',
     talla: '',
-    linea: ''
+    linea: '',
+    existencia: '',
+    precio: ''
   };
   async ngOnInit() {
    
@@ -46,7 +48,8 @@ export class ComandaPage implements OnInit {
     this.modelos.color = this.datosid.result.color;
     this.modelos.talla = this.datosid.result.talla;
     this.modelos.linea = this.datosid.result.tipocatalogo;
-    
+    this.modelos.existencia = this.datosid.result.existencia;
+    this.modelos.precio = this.datosid.result.precio;
 
     console.log(this.datosid);
 
